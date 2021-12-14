@@ -34,3 +34,15 @@ alphabet = ['a','b','c','d','e','f','g','h','i','j'];
 // let vowels = ["a", "e", "i", "o", "u", "z"];
 console.log(alphabet.sort(() => .5 - Math.random()).sort(() => .5 - Math.random()));
 ```
+
+```
+lets take direct images of the users and use them in the game
+
+<input accept="image/*" id="icon-button-file" type="file" capture="environment" />
+```
+
+Routes
+
+- Add Users
+- Game
+- Results
