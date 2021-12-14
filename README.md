@@ -37,7 +37,7 @@ console.log(alphabet.sort(() => .5 - Math.random()).sort(() => .5 - Math.random(
 
 ```
 lets take direct images of the users and use them in the game
-
+https://stackoverflow.com/questions/23916566/html5-input-type-file-accept-image-capture-camera-display-as-image-rat
 <input accept="image/*" id="icon-button-file" type="file" capture="environment" />
 ```
 
