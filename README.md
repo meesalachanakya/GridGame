@@ -41,13 +41,27 @@ https://stackoverflow.com/questions/23916566/html5-input-type-file-accept-image-
 <input accept="image/*" id="icon-button-file" type="file" capture="environment" />
 
 
-imageEl.addEventListener('change', function () {
+
+<div id="form1">
+    <h1>ImageUploade</h1>
+    <input accept="image/*" id="imgInp" type="file" capture />
+    <div id="imageContainer" class="image-container">
+
+    </div>
+</div>
+
+const imageEl = document.getElementById("imgInp")
+const contain = document.getElementById("imageContainer")
+
+
+imageEl.addEventListener('change', function() {
     var reader = new FileReader();
-    reader.onload = function () {
+    reader.onload = function() {
         let thisImage = reader.result;
         let image = new Image();
         image.src = thisImage;
-        document.body.appendChild(image);
+        image.classList.add("imageStyles")
+        contain.appendChild(image);
     };
     reader.readAsDataURL(this.files[0]);
 });
