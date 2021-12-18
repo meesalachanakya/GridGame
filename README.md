@@ -39,6 +39,18 @@ console.log(alphabet.sort(() => .5 - Math.random()).sort(() => .5 - Math.random(
 lets take direct images of the users and use them in the game
 https://stackoverflow.com/questions/23916566/html5-input-type-file-accept-image-capture-camera-display-as-image-rat
 <input accept="image/*" id="icon-button-file" type="file" capture="environment" />
+
+
+imageEl.addEventListener('change', function () {
+    var reader = new FileReader();
+    reader.onload = function () {
+        let thisImage = reader.result;
+        let image = new Image();
+        image.src = thisImage;
+        document.body.appendChild(image);
+    };
+    reader.readAsDataURL(this.files[0]);
+});
 ```
 
 Routes
@@ -46,3 +58,36 @@ Routes
 - Add Users
 - Game
 - Results
+
+Card
+ReactCardFlip - to get flip animation
+
+- props
+- cardId
+- isOpen
+- cardImage
+- showCard
+
+CardList
+state
+
+- Array of Cards
+  - cardId,
+  - id: uuid(),
+  - cardImage,
+  - isOpen
+- selectedCardOne => canItBeARef
+
+methods
+
+- showCard
+  - If isOpen IsEven
+    - findTheSelectedCardAndShowTheCard(updateIsOpenOfTheCard)(updateSelectedCardOne)
+  - Else
+    - findTheSelectedCardCheckTheIdWithSelectedCardOne
+      - IfTrue
+        - OpenBothTheCards
+      - IfFalse
+        - setTimeOut(1000).closeCard(selectedCardOne, Id)
+- closeCard
+  - CloseTheCardsWithTheIdReceived
